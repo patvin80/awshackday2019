@@ -1,0 +1,52 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'persona-donator-node
+
+  Sample SAM Template for persona-donator-node
+
+  '
+Globals:
+  Function:
+    Timeout: 300
+Outputs:
+  PersonaDonatorApi:
+    Description: API Gateway endpoint URL for Prod stage for Hello World function
+    Value:
+      Fn::Sub: https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello/
+  PersonaDonatorGet:
+    Description: Hello World Lambda Function ARN
+    Value:
+      Fn::GetAtt:
+      - PersonaDonatorGet
+      - Arn
+  PersonaDonatorPost:
+    Description: Hello World Lambda Function ARN
+    Value:
+      Fn::GetAtt:
+      - PersonaDonatorPost
+      - Arn
+Resources:
+  PersonaDonatorGet:
+    Properties:
+      CodeUri: s3://aws-devday-hack-team7/3df633cded9f3948b466f8c363b132f8
+      Events:
+        personadonatorAPI:
+          Properties:
+            Method: get
+            Path: /personadonator
+          Type: Api
+      Handler: app.personaget
+      Runtime: nodejs8.10
+    Type: AWS::Serverless::Function
+  PersonaDonatorPost:
+    Properties:
+      CodeUri: s3://aws-devday-hack-team7/3df633cded9f3948b466f8c363b132f8
+      Events:
+        personadonatorAPI:
+          Properties:
+            Method: post
+            Path: /personadonator
+          Type: Api
+      Handler: app.personapost
+      Runtime: nodejs8.10
+    Type: AWS::Serverless::Function
+Transform: AWS::Serverless-2016-10-31

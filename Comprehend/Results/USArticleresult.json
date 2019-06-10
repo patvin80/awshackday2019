@@ -1,0 +1,34 @@
+{
+    "Entities": [
+        {
+            "BeginOffset": 134,
+            "EndOffset": 139,
+            "Score": 0.4149816632270813,
+            "Text": "house",
+            "Type": "FAMILY"
+        },
+        {
+            "BeginOffset": 250,
+            "EndOffset": 263,
+            "Score": 0.7942087650299072,
+            "Text": "entire family",
+            "Type": "FAMILY"
+        },
+        {
+            "BeginOffset": 733,
+            "EndOffset": 740,
+            "Score": 0.629187285900116,
+            "Text": "sisters",
+            "Type": "FAMILY"
+        },
+        {
+            "BeginOffset": 801,
+            "EndOffset": 806,
+            "Score": 0.4818333685398102,
+            "Text": "safer",
+            "Type": "FAMILY"
+        }
+    ],
+    "File": "USAArticle.txt",
+    "Line": 0
+}

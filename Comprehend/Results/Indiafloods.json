@@ -1,0 +1,41 @@
+{
+    "Entities": [
+        {
+            "BeginOffset": 520,
+            "EndOffset": 524,
+            "Score": 0.7068798542022705,
+            "Text": "huts",
+            "Type": "FAMILY"
+        },
+        {
+            "BeginOffset": 551,
+            "EndOffset": 559,
+            "Score": 0.7578069567680359,
+            "Text": "orchards",
+            "Type": "FAMILY"
+        },
+        {
+            "BeginOffset": 1065,
+            "EndOffset": 1071,
+            "Score": 0.5238461494445801,
+            "Text": "places",
+            "Type": "FAMILY"
+        },
+        {
+            "BeginOffset": 1098,
+            "EndOffset": 1102,
+            "Score": 0.5044220089912415,
+            "Text": "navy",
+            "Type": "FAMILY"
+        },
+        {
+            "BeginOffset": 1615,
+            "EndOffset": 1620,
+            "Score": 0.514423668384552,
+            "Text": "towns",
+            "Type": "FAMILY"
+        }
+    ],
+    "File": "IndiaFloods.txt",
+    "Line": 0
+}
