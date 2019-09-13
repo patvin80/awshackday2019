@@ -4,6 +4,7 @@ var ddb = new AWS.DynamoDB({apiVersion: '2012-08-10'});
 var mapper = require("./personatohelparticle")
 
 exports.personaresult = async( persona ) => {
+    console.log(persona);
     // Create DynamoDB service object
     var params = {
         ExpressionAttributeValues: {
@@ -14,18 +15,10 @@ exports.personaresult = async( persona ) => {
         FilterExpression: 'personacat = :pc',
         TableName: 'unarticleslist'
     };
-    let result = "https://www.foxnews.com/world/cyclone-fani-india-severe-wind-evacuation-rain-surge-warning"
-    ddb.scan(params, (err, data) => {
-        if (err) {
-            console.log("Error", err);
-        } else {
-            console.log("Success", data.Items);
-            data.Items.forEach(function(element, index, array) {
-                return element.article_name;
-            });
-        }
-    });
-    return result;
+    let result = "Article2";//"https://www.foxnews.com/world/cyclone-fani-india-severe-wind-evacuation-rain-surge-warning"
+    result = await ddb.scan(params);
+    console.log(result.promise());
+    return result.promise();
 }
 
 exports.personaresultsimul = async( persona ) => {

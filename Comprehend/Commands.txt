@@ -1,11 +1,14 @@
+#Unsuccessful
 aws comprehend start-entities-detection-job --entity-recognizer-arn "arn:aws:comprehend:us-east-1:013730889080:entity-recognizer/ReligiousRecognizer" --job-name ReligionDetector --data-access-role-arn "arn:aws:iam::013730889080:role/service-role/AmazonComprehendServiceRole-aws-hack-day-s3role" --language-code en --input-data-config "S3Uri=s3://aws-devday-hack-team7/ComprehendDataSample.txt" --output-data-config "S3Uri=s3://aws-devday-hack-team7/ComprehendDataSampleResult.json" --region us-east-1
-
-
 aws comprehend start-entities-detection-job --entity-recognizer-arn "arn:aws:comprehend:us-east-1:013730889080:entity-recognizer/ReligiousRecognizer" --job-name ReligionDetector --data-access-role-arn "arn:aws:iam::013730889080:role/service-role/AmazonComprehendServiceRole-aws-hack-day-s3role" --language-code en --input-data-config "S3Uri=s3://aws-devday-hack-team7/USAArticle.txt" --output-data-config "S3Uri=s3://aws-devday-hack-team7/usarticleresult" --region us-east-1
 
+# Successful
 aws comprehend start-entities-detection-job --entity-recognizer-arn "arn:aws:comprehend:us-east-1:013730889080:entity-recognizer/PersonaRecognizerFamily6" --job-name ReligionDetector --data-access-role-arn "arn:aws:iam::013730889080:role/service-role/AmazonComprehendServiceRole-aws-hack-day-s3role" --language-code en --input-data-config "S3Uri=s3://aws-devday-hack-team7/USAArticle.txt" --output-data-config "S3Uri=s3://aws-devday-hack-team7/usarticleresult2" --region us-east-1
-
+# India Floods Data
 aws comprehend start-entities-detection-job --entity-recognizer-arn "arn:aws:comprehend:us-east-1:013730889080:entity-recognizer/PersonaRecognizerFamily6" --job-name IndiaFloodsDataFamily --data-access-role-arn "arn:aws:iam::013730889080:role/service-role/AmazonComprehendServiceRole-aws-hack-day-s3role" --language-code en --input-data-config "S3Uri=s3://aws-devday-hack-team7/IndiaFloods.txt" --output-data-config "S3Uri=s3://aws-devday-hack-team7/indiafloodresults" --region us-east-1
+# India Floods Demo
+aws comprehend start-entities-detection-job --entity-recognizer-arn "arn:aws:comprehend:us-east-1:013730889080:entity-recognizer/PersonaRecognizerFamily6" --job-name IndiaFloodsDataFamilyDemo --data-access-role-arn "arn:aws:iam::013730889080:role/service-role/AmazonComprehendServiceRole-aws-hack-day-s3role" --language-code en --input-data-config "S3Uri=s3://aws-devday-hack-team7/IndiaFloods.txt" --output-data-config "S3Uri=s3://aws-devday-hack-team7/indiafloodresults" --region us-east-1
 
-aws comprehend start-entities-detection-job --entity-recognizer-arn "arn:aws:comprehend:us-east-1:013730889080:entity-recognizer/PersonaRecognizerViolence" --job-name ViolenceRecognizerGG --data-access-role-arn "arn:aws:iam::013730889080:role/service-role/AmazonComprehendServiceRole-aws-hack-day-s3role" --language-code en --input-data-config "S3Uri=s3://aws-devday-hack-team7/GuatamelaGirl.txt" --output-data-config "S3Uri=s3://aws-devday-hack-team7/violenceresultsgg" --region us-east-1
+### Not running this
+## aws comprehend start-entities-detection-job --entity-recognizer-arn "arn:aws:comprehend:us-east-1:013730889080:entity-recognizer/PersonaRecognizerViolence" --job-name ViolenceRecognizerGG --data-access-role-arn "arn:aws:iam::013730889080:role/service-role/AmazonComprehendServiceRole-aws-hack-day-s3role" --language-code en --input-data-config "S3Uri=s3://aws-devday-hack-team7/GuatamelaGirl.txt" --output-data-config "S3Uri=s3://aws-devday-hack-team7/violenceresultsgg" --region us-east-1
 arn:aws:comprehend:us-east-1:013730889080:entity-recognizer/PersonaRecognizerViolence

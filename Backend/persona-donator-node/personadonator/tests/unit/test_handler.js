@@ -5,7 +5,7 @@ const chai = require('chai');
 const expect = chai.expect;
 var event, context;
 event = {
-    "body": "{\"persona\":\"VIOLENCE\"}",
+    "body": "{\"persona\":\"FAMILY\"}",
     "resource": "/{proxy+}",
     "path": "/path/to/resource",
     "httpMethod": "POST",
