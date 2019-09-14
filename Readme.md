@@ -62,7 +62,7 @@ Agile Practices at its best. Only when you manage your own budget / Blank Check
 
 | Phase | Objective | Fallback |
 |--- | --- | --- |
-| Backend Development |  Categorize a news Article based upon the Custom Comprehend Model | None | 
+| [Backend Development](#backendcomprehendcustomentittmodeling) |  Categorize a news Article based upon the Custom Comprehend Model | None | 
 | Front End Integration  | React Frontend | API |
 | Data Pipeline | Implement a Data Processing Pipeline | Outline |
 

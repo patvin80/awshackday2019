@@ -63,34 +63,19 @@ exports.personaget = async (event, context) => {
 exports.personapost = async (event, context) => {
     try {   
         var  jsonBody = JSON.parse(event.body);
-        let newsArticle
-        // let newsArticleResult = await dynamodbops.personaresult(jsonBody.persona);
-        // console.log(newsArticleResult);
-        // newsArticleResult((err, data) => {
-        //     if (err) {
-        //         console.log("Error", err);
-        //     } else {
-        //         console.log("Success", data.Items);
-        //         data.Items.forEach(function(element, index, array) {
-        //             console.log(element.article_name);
-        //         });
-        //     }
-        // });
-        //let newsArticleResult = await dynamodbops.personaresultsimul(jsonBody.persona);
-        //console.log(result);\
-        var newsArticleResult = mapper3.mapper[jsonBody.persona];
+        let personaStory = await dynamodbops.personaresult(jsonBody.persona);
         var donateLinkResult =  mapper.mapper[jsonBody.persona];
-        var personaStory = mapper2.mapper[jsonBody.persona];
+        var newsArticleResult = mapper3.mapper[jsonBody.persona];
         response = {
             'statusCode': 200,
             'body': JSON.stringify({
                 newsArticle: newsArticleResult,
                 donateLink: donateLinkResult,
-                story: personaStory 
-
+                story: personaStory
             })
         }
-    } catch (err) {
+    } 
+    catch (err) {
         console.log(err);
         return err;
     }
