@@ -62,9 +62,9 @@ Agile Practices at its best. Only when you manage your own budget / Blank Check
 
 | Phase | Objective | Fallback |
 |--- | --- | --- |
-| Backend Development |  Categorize a news Article based upon the Custom Comprehend Model | None | 
-| Front End Integration  | React Frontend | API |
-| Data Pipeline | Implement a Data Processing Pipeline | Outline |
+| [Backend Development](#backend---comprehend-custom-entity-modeling) |  Categorize a news Article based upon the Custom Comprehend Model | None | 
+| [Front End Integration](#frontend---serverless-application-model) | React Frontend | API |
+| [Proposal](#presentation) | Powerpoint Deck | None |
 
 # Implementation
 
@@ -157,7 +157,15 @@ Response:
 
 The presentation we did for the judges and client is [here](/Presentation/Pitch_UNHCR.pptx)
 
-# Featured AWS Services - Serverless Application Model
+# Featured AWS Services 
+
+## AWS Comprehend - Custom Entity Modeling
+
+1. Enables extending the Out of the Box Model Provided by AWS.
+2. Faciliates Business or Domain Specific Recategorization of the Data. Amazon offers a [Comprehend Medical Service](https://console.aws.amazon.com/comprehend/v2/home?region=us-east-1#welcome). 
+3. Bold Statement - Eliminates Bias from a Service Provider.
+
+## Serverless Application Model
 
 1. Benefits of SAM - Unit Testable Lambda Function Starter Kit
 ```
