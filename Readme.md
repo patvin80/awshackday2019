@@ -155,8 +155,9 @@ Response:
 
 # Presentation
 
-The presentation we did for the judges and client is [here](/Presentation/Pitch_UNHCR.pptx)
-
+The presentation we did for the judges and client is [here](/Presentation/Pitch_UNHCR.pptx). Also we proposed a **Data Pipeline** that would help integrate the news feed end to end. 
+<img src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/816/518/datas/gallery.jpg"
+     alt="DataPipeline" />
 # Featured AWS Services 
 
 ## AWS Comprehend - Custom Entity Modeling
