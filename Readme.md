@@ -71,10 +71,9 @@ Agile Practices at its best. Only when you manage your own budget / Blank Check
 ## Model - Comprehend Custom Entity Modeling
 
 Detailed steps about the Custom Entity Modeling are availabe [here](https://docs.aws.amazon.com/comprehend/latest/dg/cer-entity-list.html)
-1. Prepared a document with a list of values which we were looking for.
-2. The model needs a lot of training data so be prepared.
-3. Setup a Custom Classifier Job on the AWS Comprehend Console
-4. Start the Detection Job using [start-entities-detection-job](https://docs.aws.amazon.com/cli/latest/reference/comprehend/start-entities-detection-job.html) CLI 
+1. Prepared a [document](/Comprehend/ComprehendSample.txt) with a list of values which we were looking for. 
+2. Setup a Custom Classifier Job on the AWS Comprehend Console
+3. Start the Detection Job using [start-entities-detection-job](https://docs.aws.amazon.com/cli/latest/reference/comprehend/start-entities-detection-job.html) CLI 
 
 ```
 aws comprehend start-entities-detection-job \
