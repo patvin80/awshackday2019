@@ -9,17 +9,17 @@ Globals:
     Timeout: 300
 Outputs:
   PersonaDonatorApi:
-    Description: API Gateway endpoint URL for Prod stage for Hello World function
+    Description: API Gateway endpoint URL for Prod stage for Persona Donator function
     Value:
       Fn::Sub: https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello/
   PersonaDonatorGet:
-    Description: Hello World Lambda Function ARN
+    Description: Persona Donator Lambda Function ARN
     Value:
       Fn::GetAtt:
       - PersonaDonatorGet
       - Arn
   PersonaDonatorPost:
-    Description: Hello World Lambda Function ARN
+    Description: Persona Donator Lambda Function ARN
     Value:
       Fn::GetAtt:
       - PersonaDonatorPost
@@ -27,7 +27,7 @@ Outputs:
 Resources:
   PersonaDonatorGet:
     Properties:
-      CodeUri: s3://aws-devday-hack-team7/3df633cded9f3948b466f8c363b132f8
+      CodeUri: s3://aws-devday-hack-team7/bc3af73e2444983eb7288c32685dc55f
       Events:
         personadonatorAPI:
           Properties:
@@ -39,7 +39,7 @@ Resources:
     Type: AWS::Serverless::Function
   PersonaDonatorPost:
     Properties:
-      CodeUri: s3://aws-devday-hack-team7/3df633cded9f3948b466f8c363b132f8
+      CodeUri: s3://aws-devday-hack-team7/bc3af73e2444983eb7288c32685dc55f
       Events:
         personadonatorAPI:
           Properties:

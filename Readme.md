@@ -1,4 +1,5 @@
 # AWS Hack Day Experience - AWS Washington DC Meetup
+The presentation is an experience report at the AWS Public Sector Summit - Hack for Good, to outline how the capabilities offered by the AWS Platform along with a right mindset can help a team build and outline a solution for a Real Business Problem even in a short duration of 8 hours. Our proposed solution was to provide donors with them stories, that they can relate to and encourage them to make an actionable donation By extending this gift of empathy, one can help greatly improve someone's life. Our solution was build using the [AWS Services](#featured-aws-services) namely Comprehend Custom Entity Model and Serverless Stack comprising of AWS API Gateway and Lambda. 
 
 ## Presented by  [Vinit Patankar](www.linkedin.com/in/pvinit) and [Robert Donovan](https://www.linkedin.com/in/robertbdonovan/)
 
@@ -22,7 +23,7 @@ As a team, we wanted to collaborate on a Problem that would help us develop solu
 
 ***
 
-#### UNHCR wanted to the Teams to evaluate News and Media articles and present them capabilities to:
+**UNHCR wanted to the Teams to evaluate News and Media articles and present them capabilities to:**
 1. Engages Americans in support of the world’s 68.5 million displaced people. 
 2. Help enhance website with the ability for two-way communications that inspires interest, engenders empathy and allows Americans to more easily engage on refugee issues.
 ***
@@ -62,19 +63,18 @@ Agile Practices at its best. Only when you manage your own budget / Blank Check
 
 | Phase | Objective | Fallback |
 |--- | --- | --- |
-| [Backend Development](#backendcomprehendcustomentittmodeling) |  Categorize a news Article based upon the Custom Comprehend Model | None | 
-| Front End Integration  | React Frontend | API |
-| Data Pipeline | Implement a Data Processing Pipeline | Outline |
+| [Model Development](#model---comprehend-custom-entity-modeling) |  Categorize a news Article based upon the Custom Comprehend Model | None | 
+| [Integration Endpoint](#integration-endpoint---serverless-application-model) | React Frontend | API |
+| [Proposal](#presentation) | Powerpoint Deck | None |
 
 # Implementation
 
-## Backend - Comprehend Custom Entity Modeling
+## Model - Comprehend Custom Entity Modeling
 
 Detailed steps about the Custom Entity Modeling are availabe [here](https://docs.aws.amazon.com/comprehend/latest/dg/cer-entity-list.html)
-1. Prepared a document with a list of values which we were looking for.
-2. The model needs a lot of training data so be prepared.
-3. Setup a Custom Classifier Job on the AWS Comprehend Console
-4. Start the Detection Job using [start-entities-detection-job](https://docs.aws.amazon.com/cli/latest/reference/comprehend/start-entities-detection-job.html) CLI 
+1. Prepared a [document](/Comprehend/ComprehendSample.txt) with a list of values which we were looking for. 
+2. Setup a Custom Classifier Job on the AWS Comprehend Console
+3. Start the Detection Job using [start-entities-detection-job](https://docs.aws.amazon.com/cli/latest/reference/comprehend/start-entities-detection-job.html) CLI 
 
 ```
 aws comprehend start-entities-detection-job \
@@ -129,7 +129,7 @@ aws comprehend start-entities-detection-job \
 }
 ```
 
-## Frontend - [Serverless Application Model](https://github.com/awslabs/serverless-application-model)
+## Integration Endpoint - [Serverless Application Model](https://github.com/awslabs/serverless-application-model)
 
 **Time Crunch!!! Be Agile. FALLBACK!!!**
 Decided to build an AWS API Gateway/ Lambda Serverless Solution to simulate the front end.
@@ -155,9 +155,18 @@ Response:
 
 # Presentation
 
-The presentation we did for the judges and client is [here](/Presentation/Pitch_UNHCR.pptx)
+The presentation we did for the judges and client is [here](/Presentation/Pitch_UNHCR.pptx). Also we proposed a **Data Pipeline** that would help integrate the news feed end to end. 
+<img src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/816/518/datas/gallery.jpg"
+     alt="DataPipeline" />
+# Featured AWS Services 
 
-# Featured AWS Services - Serverless Application Model
+## AWS Comprehend - Custom Entity Modeling
+
+1. Enables extending the Out of the Box Model Provided by AWS.
+2. Faciliates Business or Domain Specific Recategorization of the Data. Amazon offers a [Comprehend Medical Service](https://console.aws.amazon.com/comprehend/v2/home?region=us-east-1#welcome). 
+3. Bold Statement - Eliminates Bias from a Service Provider.
+
+## Serverless Application Model
 
 1. Benefits of SAM - Unit Testable Lambda Function Starter Kit
 ```
@@ -169,8 +178,13 @@ sam package \
     --template-file template.yaml \
     --output-template-file packaged.yaml \
     --s3-bucket aws-devday-hack-team7
+
+sam deploy \
+    --template-file packaged.yaml \
+    --stack-name persona-donator-node \
+    --capabilities CAPABILITY_IAM
 ``` 
-3. My Advice - Stop Writing Lambda functions in AWS Console. Instead try
+3. My Advice - Stop Writing Lambda functions in AWS Console.
 ```
 sam init --help
 ```

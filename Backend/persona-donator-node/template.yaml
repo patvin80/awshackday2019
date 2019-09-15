@@ -42,13 +42,13 @@ Resources:
 Outputs:
 
     PersonaDonatorApi:
-      Description: "API Gateway endpoint URL for Prod stage for Hello World function"
+      Description: "API Gateway endpoint URL for Prod stage for Persona Donator function"
       Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello/"
 
     PersonaDonatorGet:
-      Description: "Hello World Lambda Function ARN"
+      Description: "Persona Donator Lambda Function ARN"
       Value: !GetAtt PersonaDonatorGet.Arn
 
     PersonaDonatorPost:
-      Description: "Hello World Lambda Function ARN"
+      Description: "Persona Donator Lambda Function ARN"
       Value: !GetAtt PersonaDonatorPost.Arn      
