@@ -1,4 +1,5 @@
 # AWS Hack Day Experience - AWS Washington DC Meetup
+The presentation is an experience report at the AWS Public Sector Summit - Hack for Good, to outline how the capabilities offered by the AWS Platform along with a right mindset can help a team build and outline a solution for a Real Business Problem even in a short duration of 8 hours. Our proposed solution was to provide donors with them stories, that they can relate to and encourage them to make an actionable donation By extending this gift of empathy, one can help greatly improve someone's life. Our solution was build using the [AWS Services](#featured-aws-services) namely Comprehend Custom Entity Model and Serverless Stack comprising of AWS API Gateway and Lambda. 
 
 ## Presented by  [Vinit Patankar](www.linkedin.com/in/pvinit) and [Robert Donovan](https://www.linkedin.com/in/robertbdonovan/)
 
