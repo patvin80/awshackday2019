@@ -22,7 +22,7 @@ As a team, we wanted to collaborate on a Problem that would help us develop solu
 
 ***
 
-#### UNHCR wanted to the Teams to evaluate News and Media articles and present them capabilities to:
+**UNHCR wanted to the Teams to evaluate News and Media articles and present them capabilities to:**
 1. Engages Americans in support of the world’s 68.5 million displaced people. 
 2. Help enhance website with the ability for two-way communications that inspires interest, engenders empathy and allows Americans to more easily engage on refugee issues.
 ***
@@ -62,13 +62,13 @@ Agile Practices at its best. Only when you manage your own budget / Blank Check
 
 | Phase | Objective | Fallback |
 |--- | --- | --- |
-| [Backend Development](#backend---comprehend-custom-entity-modeling) |  Categorize a news Article based upon the Custom Comprehend Model | None | 
-| [Front End Integration](#frontend---serverless-application-model) | React Frontend | API |
+| [Model Development](#model---comprehend-custom-entity-modeling) |  Categorize a news Article based upon the Custom Comprehend Model | None | 
+| [Integration Endpoint](#integration-endpoint---serverless-application-model) | React Frontend | API |
 | [Proposal](#presentation) | Powerpoint Deck | None |
 
 # Implementation
 
-## Backend - Comprehend Custom Entity Modeling
+## Model - Comprehend Custom Entity Modeling
 
 Detailed steps about the Custom Entity Modeling are availabe [here](https://docs.aws.amazon.com/comprehend/latest/dg/cer-entity-list.html)
 1. Prepared a document with a list of values which we were looking for.
@@ -129,7 +129,7 @@ aws comprehend start-entities-detection-job \
 }
 ```
 
-## Frontend - [Serverless Application Model](https://github.com/awslabs/serverless-application-model)
+## Integration Endpoint - [Serverless Application Model](https://github.com/awslabs/serverless-application-model)
 
 **Time Crunch!!! Be Agile. FALLBACK!!!**
 Decided to build an AWS API Gateway/ Lambda Serverless Solution to simulate the front end.
@@ -177,8 +177,13 @@ sam package \
     --template-file template.yaml \
     --output-template-file packaged.yaml \
     --s3-bucket aws-devday-hack-team7
+
+sam deploy \
+    --template-file packaged.yaml \
+    --stack-name persona-donator-node \
+    --capabilities CAPABILITY_IAM
 ``` 
-3. My Advice - Stop Writing Lambda functions in AWS Console. Instead try
+3. My Advice - Stop Writing Lambda functions in AWS Console.
 ```
 sam init --help
 ```
