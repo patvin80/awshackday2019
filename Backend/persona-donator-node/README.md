@@ -77,7 +77,7 @@ Next, run the following command to package our Lambda function to S3:
 
 ```bash
 sam package \
-    --template-file template.yaml \
+    --template-file template-test.yaml \
     --output-template-file packaged.yaml \
     --s3-bucket aws-devday-hack-team7
 ```
@@ -86,8 +86,8 @@ Next, the following command will create a Cloudformation Stack and deploy your S
 
 ```bash
 sam deploy \
-    --template-file packaged.yaml \
-    --stack-name persona-donator-node \
+    --template-file packaged-test.yaml \
+    --stack-name persona-donator-node-test \
     --capabilities CAPABILITY_IAM
 ```
 
