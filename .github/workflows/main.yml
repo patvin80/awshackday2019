@@ -11,9 +11,7 @@ jobs:
       run: cd Backend/persona-donator-node
     - name: SAM CLI Installation
       run: |
-        sudo apt update
-        sudo apt install python-pip
-        pip install --user --upgrade awscli aws-sam-cli
+        python3.7 -m pip install aws-sam-cli
         sam --version
     - name: Set AWS Credentials
       run: |
