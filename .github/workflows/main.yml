@@ -9,11 +9,9 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
-    - name: Run a aws command
-      run: aws --version
+    - name: Navigate to Persona API
+      run: cd Backend/persona-donator-node
+    - name: Pip Install check
+      run: brew -version 
+    # - name: run the AWS Deploy Command
+    #   run: aws cloudformation deploy --template-file packaged-test.yaml --stack-name persona-donator-node-test

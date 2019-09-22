@@ -1,0 +1,60 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+    persona-donator-node
+
+    Sample SAM Template for persona-donator-node
+    
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+    Function:
+        Timeout: 300
+
+
+Resources:
+
+    PersonaDonatorTestGet:
+        Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+        Properties:
+            CodeUri: personadonator/
+            Handler: app.personaget
+            Runtime: nodejs8.10
+            Policies:
+                - AmazonDynamoDBReadOnlyAccess
+                - AWSLambdaBasicExecutionRole
+            Events:
+                personadonatortestAPI:
+                    Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+                    Properties:
+                        Path: /personadonator
+                        Method: get
+
+    PersonaDonatorTestPost:
+        Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+        Properties:
+            CodeUri: personadonator/
+            Handler: app.personapost
+            Runtime: nodejs8.10
+            Policies:
+                - AmazonDynamoDBReadOnlyAccess
+                - AWSLambdaBasicExecutionRole
+            Events:
+                personadonatortestAPI:
+                    Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+                    Properties:
+                        Path: /personadonator
+                        Method: post
+
+Outputs:
+
+    PersonaDonatorApi:
+      Description: "API Gateway endpoint URL for Prod stage for Persona Donator function"
+      Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello/"
+
+    PersonaDonatorGet:
+      Description: "Persona Donator Lambda Function ARN"
+      Value: !GetAtt PersonaDonatorTestGet.Arn
+
+    PersonaDonatorPost:
+      Description: "Persona Donator Lambda Function ARN"
+      Value: !GetAtt PersonaDonatorTestPost.Arn      

@@ -1,0 +1,58 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'persona-donator-node
+
+  Sample SAM Template for persona-donator-node
+
+  '
+Globals:
+  Function:
+    Timeout: 300
+Outputs:
+  PersonaDonatorApi:
+    Description: API Gateway endpoint URL for Prod stage for Persona Donator function
+    Value:
+      Fn::Sub: https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello/
+  PersonaDonatorGet:
+    Description: Persona Donator Lambda Function ARN
+    Value:
+      Fn::GetAtt:
+      - PersonaDonatorTestGet
+      - Arn
+  PersonaDonatorPost:
+    Description: Persona Donator Lambda Function ARN
+    Value:
+      Fn::GetAtt:
+      - PersonaDonatorTestPost
+      - Arn
+Resources:
+  PersonaDonatorTestGet:
+    Properties:
+      CodeUri: s3://aws-devday-hack-team7/3a0eda2c45ca2f442206f6ec8f057e77
+      Events:
+        personadonatortestAPI:
+          Properties:
+            Method: get
+            Path: /personadonator
+          Type: Api
+      Handler: app.personaget
+      Policies:
+      - AmazonDynamoDBReadOnlyAccess
+      - AWSLambdaBasicExecutionRole
+      Runtime: nodejs8.10
+    Type: AWS::Serverless::Function
+  PersonaDonatorTestPost:
+    Properties:
+      CodeUri: s3://aws-devday-hack-team7/3a0eda2c45ca2f442206f6ec8f057e77
+      Events:
+        personadonatortestAPI:
+          Properties:
+            Method: post
+            Path: /personadonator
+          Type: Api
+      Handler: app.personapost
+      Policies:
+      - AmazonDynamoDBReadOnlyAccess
+      - AWSLambdaBasicExecutionRole
+      Runtime: nodejs8.10
+    Type: AWS::Serverless::Function
+Transform: AWS::Serverless-2016-10-31
