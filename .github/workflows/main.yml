@@ -3,9 +3,8 @@ name: CI
 on: [push]
 
 jobs:
-  runs-on: ubuntu-latest
   build:
-    
+    runs-on: ubuntu-latest
     steps:
     - uses: docker://pahud/aws-sam-cli
     - name: Navigate to Persona API
