@@ -6,11 +6,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: docker://pahud/aws-sam-cli
     - name: Navigate to Persona API
       run: cd Backend/persona-donator-node
     - name: SAM CLI Installation
       run: |
+        sudo apt update
+        sudo apt install python-pip
+        pip install --user --upgrade awscli aws-sam-cli
         sam --version
     - name: Set AWS Credentials
       run: |
