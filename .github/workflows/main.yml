@@ -14,4 +14,4 @@ jobs:
     - name: Navigate to Persona API
       run: | 
         cd Backend/persona-donator-node
-        aws cloudformation deploy --template-file packaged-test.yaml --stack-name persona-donator-node-test
+        aws cloudformation deploy --template-file packaged-test.yaml --stack-name persona-donator-node-test --region us-east-1
