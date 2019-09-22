@@ -23,15 +23,9 @@ exports.personaresult = async( persona ) => {
         articleStory = '';
         result.Items.forEach((data) => {
             articleStory += data.article_name.S;
-            console.log(articleStory);
-            
         });
     }
     return articleStory;
-
-    // else {
-    //     return articleStory;
-    // }
 
 }
 
