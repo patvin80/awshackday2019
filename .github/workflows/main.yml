@@ -8,9 +8,7 @@ jobs:
     steps:
     - uses: docker://pahud/aws-sam-cli
     - name: SAM CLI Installation
-      run: |
-        sudo apt-get install python3.7
-        python3.7 -m pip install aws-sam-cli
+      run: 
         sam --version
     - name: Set AWS Credentials
       run: |
@@ -20,7 +18,7 @@ jobs:
       run: |
         git clone https://github.com/patvin80/awshackday2019.git
         git checkout enhancements/nodeimprovements
-        cd Backend/persona-donator-node
+        cd awshackday2019/Backend/persona-donator-node
         pwd
       
     # - name: run the AWS Deploy Command
