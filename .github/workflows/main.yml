@@ -12,6 +12,11 @@ jobs:
     - name: Navigate to Persona API
       run: cd Backend/persona-donator-node
     - name: Pip Install check
-      run: brew -version 
+      run: |
+        git clone https://github.com/Homebrew/brew ~/.linuxbrew/Homebrew
+        mkdir ~/.linuxbrew/bin
+        ln -s ../Homebrew/bin/brew ~/.linuxbrew/bin
+        eval $(~/.linuxbrew/bin/brew shellenv)
+        brew --version
     # - name: run the AWS Deploy Command
     #   run: aws cloudformation deploy --template-file packaged-test.yaml --stack-name persona-donator-node-test
