@@ -21,5 +21,9 @@ jobs:
         brew tap aws/tap
         brew install aws-sam-cli
         sam --version
+    - name: Set AWS Credentials
+      run: |
+        export AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY }}
+        echo $AWS_ACCESS_KEY_ID
     # - name: run the AWS Deploy Command
     #   run: aws cloudformation deploy --template-file packaged-test.yaml --stack-name persona-donator-node-test
