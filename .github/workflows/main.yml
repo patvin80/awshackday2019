@@ -14,4 +14,4 @@ jobs:
         echo AWS_ACCESS_KEY_ID
         echo $AWS_ACCESS_KEY_ID
         cd Backend/persona-donator-node
-        aws cloudformation deploy --template-file packaged-test.yaml --stack-name persona-donator-node-test --region us-east-1
+        aws cloudformation deploy --template-file packaged-test.yaml --stack-name persona-donator-node-test --no-fail-on-empty-changeset --region us-east-1
