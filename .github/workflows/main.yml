@@ -4,11 +4,9 @@ on: [push]
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
     
     steps:
-    - uses: pahud/aws-sam-cli
+    - uses: docker://pahud/aws-sam-cli
     - name: Navigate to Persona API
       run: cd Backend/persona-donator-node
     - name: SAM CLI Installation
