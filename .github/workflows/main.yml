@@ -8,12 +8,12 @@ jobs:
     steps:
     - name: Checkout files
       uses: actions/checkout@v1
-    - name: Test the code
-      run: |
-        cd Backend/persona-donator-node/personadonator
-        npm build
-        npm test
-        cd ../../../
+    # - name: Test the code
+    #   run: |
+    #     cd Backend/persona-donator-node/personadonator
+    #     npm build
+    #     npm test
+    #     cd ../../../
     - name: Use AWS SAM Actions
       uses: apex/actions/aws/sam@master
       with:
