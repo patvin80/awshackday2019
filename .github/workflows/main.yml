@@ -13,6 +13,6 @@ jobs:
       with:
         args: package --template-file Backend/persona-donator-node/template-test.yaml --output-template-file Backend/persona-donator-node/packaged-test.yaml --s3-bucket aws-devday-hack-team7
       env: 
-      - AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      - AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
-      - AWS_DEFAULT_REGION: us-east-1
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
+        AWS_DEFAULT_REGION: us-east-1
