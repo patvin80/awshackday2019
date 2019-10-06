@@ -27,4 +27,6 @@ jobs:
         export AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY }}
         export AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}
         export AWS_DEFAULT_REGION="us-east-1"
-        aws cloudformation deploy --template-file /github/workspace/Backend/persona-donator-node/packaged-test.yaml --stack-name persona-donator-node-test --capabilities CAPABILITY_IAM
+        pwd
+        ls -l
+        aws cloudformation deploy --template-file Backend/persona-donator-node/packaged-test.yaml --stack-name persona-donator-node-test --capabilities CAPABILITY_IAM
